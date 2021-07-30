@@ -718,14 +718,14 @@ int main(int argc, char** argv) {
     return status;
   }
 
-  if (getenv_bool("driver.tracing.enable", true)) {
+/*  if (getenv_bool("driver.tracing.enable", true)) {
     status = start_trace_provider();
     if (status != ZX_OK) {
       LOGF(INFO, "Failed to register trace provider: %s", zx_status_get_string(status));
       // This is not a fatal error.
     }
   }
-  auto stop_tracing = fbl::AutoCall([]() { stop_trace_provider(); });
+  auto stop_tracing = fbl::AutoCall([]() { stop_trace_provider(); }); */
 
   status = ctx.SetupRootDevcoordinatorConnection(std::move(root_conn_channel));
   if (status != ZX_OK) {
